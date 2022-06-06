@@ -8,7 +8,8 @@ import csv
 
 class DataGen:
     def __init__(self):
-        self.fields = {"k":[], 
+        self.fields = {"k":[],
+                              "x_zero":[],
                               "x_t":[], 
                               "Component A":[], 
                               "Component B":[],
@@ -25,6 +26,7 @@ class DataGen:
             j = 0
             k = kLower + random.random() * (kUpper - kLower)
             x_t = random.random() # x_t is x(t)
+            x_zero = x_t
             fat = 0     #fat is the fatigue
             compA = 1 - x_t  #compA is xA(t)
             compB = x_t * k  #compB is xB(t)
@@ -34,7 +36,7 @@ class DataGen:
                 fat = fat + abs(compA*compB - x_t)
                 x_t = compA * compB
                 j += 1  
-            output.loc[len(output.index)] = [round(k, self.sigFig), round(x_t, self.sigFig), round(compA, self.sigFig), round(compB, self.sigFig), round(fat, self.sigFig)]
+            output.loc[len(output.index)] = [round(k, self.sigFig),round(x_zero, self.sigFig), round(x_t, self.sigFig), round(compA, self.sigFig), round(compB, self.sigFig), round(fat, self.sigFig)]
             i+=1
         return output
         
@@ -47,6 +49,7 @@ class DataGen:
             j = 0
             k = kLower + random.random() * (kUpper - kLower)
             x_t = random.random() 
+            x_zero = x_t
             fat = 0
             compA = 1 - x_t
             compB = x_t * k
@@ -56,7 +59,7 @@ class DataGen:
                 fat = fat + abs(compA*compB - x_t)
                 x_t = compA * compB
                 j += 1  
-            row = [round(k, self.sigFig), round(x_t, self.sigFig), round(compA, self.sigFig), round(compB, self.sigFig), round(fat, self.sigFig)]
+            row = [round(k, self.sigFig), round(x_zero, self.sigFig), round(x_t, self.sigFig), round(compA, self.sigFig), round(compB, self.sigFig), round(fat, self.sigFig)]
             writer.writerow(row) 
             i+=1
         f.close()
