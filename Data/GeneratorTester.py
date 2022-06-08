@@ -9,6 +9,7 @@ import numpy as np
 gen = gen.DataGen()
 test = gen.generate(1000)
 test2 = gen.generateCSV("SampleData.csv", 1000)
+test3 = gen.generateIncrementalData(0, 3, 2, .5)
 
 
 plt.scatter(test['k'], test['x_t'], label = "x(t)")
