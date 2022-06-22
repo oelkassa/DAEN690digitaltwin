@@ -51,7 +51,7 @@ k_ranges = ["K[0,1)", "K[1,3)", "K[3,3.5)", "K[3.5,3.55)","K[3.55,3.6)","K[3.6,4
 agg["K Range"] = k_ranges
 
 # Populate aggregated table with means
-for i in range(0,5):
+for i in range(0,6):
     agg["Min"][i] = min(data[i])
     agg["Max"][i] = max(data[i])
     agg["Median"][i] = np.median(data[i])
