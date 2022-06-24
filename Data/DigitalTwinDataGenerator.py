@@ -69,8 +69,8 @@ class DataGen:
         l = 0
         while l < instances:
             i = 0
-            n = (kUpper - kLower)/increment + 1
-            k = 0
+            n = (kUpper - kLower)/increment 
+            k = kLower
             while i < n:
                 j = 0
                 x_t = random.random() # x_t is x(t)
