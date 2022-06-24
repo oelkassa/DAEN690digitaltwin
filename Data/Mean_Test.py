@@ -39,19 +39,20 @@ x335 = gen.generate(n=1000, kLower = 3, kUpper = 3.499)
 x35355 = gen.generate(n=1000, kLower = 3.5, kUpper = 3.544)
 x3536 = gen.generate(n=1000, kLower = 3.55, kUpper = 3.599)
 x364 = gen.generate(n=1000, kLower = 3.6, kUpper = 4)
+x04 = gen.generate(n=1000, kLower = 0, kUpper = 4)
 
 # Pull out x_t values
-data = np.array([x01['x_t'],x13['x_t'],x335['x_t'],x35355['x_t'],x3536['x_t'],x364['x_t']])
+data = np.array([x01['x_t'],x13['x_t'],x335['x_t'],x35355['x_t'],x3536['x_t'],x364['x_t'], x04['x_t']])
 data = data.transpose()
 
 # Create aggregated dataframe
 column_names = ["K Range", "Min", "Max", "Median", "Arithmetic Mean", "Geometric Mean", "Harmonic Mean"]
 agg = pd.DataFrame(columns = column_names)
-k_ranges = ["K[0,1)", "K[1,3)", "K[3,3.5)", "K[3.5,3.55)","K[3.55,3.6)","K[3.6,4)"]
+k_ranges = ["K[0,1)", "K[1,3)", "K[3,3.5)", "K[3.5,3.55)","K[3.55,3.6)","K[3.6,4)", "K[0,4]"]
 agg["K Range"] = k_ranges
 
 # Populate aggregated table with means
-for i in range(0,6):
+for i in range(0,7):
     agg["Min"][i] = min(data[i])
     agg["Max"][i] = max(data[i])
     agg["Median"][i] = np.median(data[i])
