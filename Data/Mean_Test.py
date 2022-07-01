@@ -25,7 +25,6 @@ Testing Scientific and Harmonic Mean of Oscillating Datasets
 # Reference article: https://towardsdatascience.com/on-average-youre-using-the-wrong-average-geometric-harmonic-means-in-data-analysis-2a703e21ea0
 
 import DigitalTwinDataGenerator as gen
-import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 from scipy.stats import gmean
