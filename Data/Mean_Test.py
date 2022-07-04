@@ -67,5 +67,4 @@ for i in range(0,6):
     agg["Arithmetic Mean"][i] = np.mean(data[0:,i])
     agg["Geometric Mean"][i] = gmean(data[0:,i])
     agg["Harmonic Mean"][i] = hmean(data[0:,i]) 
->>>>>>> Stashed changes
 print(agg)
