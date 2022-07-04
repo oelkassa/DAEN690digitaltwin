@@ -51,6 +51,7 @@ k_ranges = ["K[0,1)", "K[1,3)", "K[3,3.5)", "K[3.5,3.55)","K[3.55,3.6)","K[3.6,4
 agg["K Range"] = k_ranges
 
 # Populate aggregated table with means
+<<<<<<< Updated upstream
 for i in range(0,7):
     agg["Min"][i] = min(data[i])
     agg["Max"][i] = max(data[i])
@@ -59,4 +60,13 @@ for i in range(0,7):
     agg["Geometric Mean"][i] = gmean(data[i])
     agg["Harmonic Mean"][i] = hmean(data[i])
     
+=======
+for i in range(0,6):
+    agg["Min"][i] = min(data[0:,i])
+    agg["Max"][i] = max(data[0:,i])
+    agg["Median"][i] = np.median(data[0:,i])
+    agg["Arithmetic Mean"][i] = np.mean(data[0:,i])
+    agg["Geometric Mean"][i] = gmean(data[0:,i])
+    agg["Harmonic Mean"][i] = hmean(data[0:,i]) 
+>>>>>>> Stashed changes
 print(agg)
