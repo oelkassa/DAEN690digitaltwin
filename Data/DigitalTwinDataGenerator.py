@@ -9,10 +9,10 @@ import csv
 class DataGen:
     def __init__(self):
         self.fields = {"k":[],
-                              "x_zero":[],
-                              "x_t":[], 
-                              "Component A":[], 
-                              "Component B":[],
+                              "xzero":[],
+                              "xt":[], 
+                              "ComponentA":[], 
+                              "ComponentB":[],
                               "Fatigue":[]}
         self.sigFig = 10
         
