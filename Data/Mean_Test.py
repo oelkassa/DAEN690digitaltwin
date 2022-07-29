@@ -25,12 +25,14 @@ Testing Scientific and Harmonic Mean of Oscillating Datasets
 # Reference article: https://towardsdatascience.com/on-average-youre-using-the-wrong-average-geometric-harmonic-means-in-data-analysis-2a703e21ea0
 
 import DigitalTwinDataGenerator as gen
+import os
 import pandas as pd
 import numpy as np
 from scipy.stats import gmean
 from scipy.stats import hmean
 gen = gen.DataGen()
 
+os.chdir('C:\\Users\oelkassabany\Documents\GitHub\DAEN690digitaltwin\Data')
 # Generate datasets
 x01 = gen.generate(n=1000, kLower = 0, kUpper = 0.999)
 x13 = gen.generate(n=1000, kLower = 1, kUpper = 2.999)
@@ -41,7 +43,7 @@ x364 = gen.generate(n=1000, kLower = 3.6, kUpper = 4)
 x04 = gen.generate(n=1000, kLower = 0, kUpper = 4)
 
 # Pull out x_t values
-data = np.array([x01['x_t'],x13['x_t'],x335['x_t'],x35355['x_t'],x3536['x_t'],x364['x_t'], x04['x_t']])
+data = np.array([x01['xt'],x13['xt'],x335['xt'],x35355['xt'],x3536['xt'],x364['xt'], x04['xt']])
 data = data.transpose()
 
 # Create aggregated dataframe
@@ -51,7 +53,7 @@ k_ranges = ["K[0,1)", "K[1,3)", "K[3,3.5)", "K[3.5,3.55)","K[3.55,3.6)","K[3.6,4
 agg["K Range"] = k_ranges
 
 # Populate aggregated table with means
-for i in range(0,6):
+for i in range(0,7):
     agg["Min"][i] = min(data[0:,i])
     agg["Max"][i] = max(data[0:,i])
     agg["Median"][i] = np.median(data[0:,i])
