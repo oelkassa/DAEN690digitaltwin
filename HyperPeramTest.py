@@ -158,7 +158,7 @@ def testHyperParamsHoldOut(numLayers, numNodes, epochs, numTests, kLower, kUpper
 
 
 result1 = modelGen.testHyperParams(5, 128, 1000, 20, 0, 3)
-result2 = modelGen.testHyperParamsHoldOut(5, 128, 1000, 20, 3.6, 4, 3.7, 3.75) 
+result2 = modelGen.testHyperParamsHoldOut(5, 128, 1000, 20, 0, 3, 1.2, 1.3) 
 result3 = modelGen.testHyperParams(5, 128, 1000, 20, 3, 3.6)
 result4 = modelGen.testHyperParamsHoldOut(5, 128, 1000, 20, 3, 3.6, 3.3, 3.35)
 result5 = modelGen.testHyperParams(5, 128, 1000, 20, 3.6, 4)  
