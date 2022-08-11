@@ -1,0 +1,6 @@
+https://dtwin722.s3.amazonaws.com/dtwin-k0to3-train/
+https://dtwin722.s3.amazonaws.com/dtwin-k36to4-hold/
+https://dtwin722.s3.amazonaws.com/dtwin-k36to4-train/
+https://dtwin722.s3.amazonaws.com/dtwin-k3to36-hold/
+https://dtwin722.s3.amazonaws.com/dtwin-k3to36-train/
+https://dtwin722.s3.amazonaws.com/dtwin-kto3-holdout/
